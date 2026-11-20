@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Love Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: tender, private, a real object you hold
+   IDEA: a cloth-bound "Love Story" book whose pages you drag by hand
+   PICTURE: the book on a dark table; paper curls under the finger
+   COLOUR and TYPE: forest table, ivory paper, deep green cloth, gold foil, blood-red ink; Cormorant, Caveat
+   LAYOUT: one centred object; single page on phones, spread on wide screens */
+:root{--paper:#f6efe2;--ink:#2b2620;--soft:#7b7265;--gold:#b08d5b;--cloth:#1f3328;--blood:#7a0b0b}
+*{box-sizing:border-box;min-width:0}
+html,body{height:100%}
+body{margin:0;background:radial-gradient(ellipse at 50% 35%,#24332b,#121a15 72%);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+h1,h2,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.08;margin:0;text-wrap:balance}
+#book{filter:drop-shadow(0 24px 40px rgba(0,0,0,.45))}
+
+.page{background:var(--paper);overflow:hidden}
+.page::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .55 0 0 0 0 .48 0 0 0 0 .38 0 0 0 .18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.page.--right .in{background:linear-gradient(90deg,rgba(120,95,60,.18),transparent 9%)}
+.page.--left .in{background:linear-gradient(270deg,rgba(120,95,60,.18),transparent 9%)}
+.in{position:absolute;inset:0;padding:9% 10%;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.num{position:absolute;bottom:4%;left:0;right:0;text-align:center;font:500 13px "Cormorant Garamond",serif;color:var(--soft)}
+.orn{width:40px;height:1px;background:var(--gold);margin:14px auto}
+
+/* covers */
+.hard{background:linear-gradient(100deg,#15251c,var(--cloth) 12%,#27402f 55%,var(--cloth))}
+.hard::before{opacity:.5}
+.hard .in{background:none!important;color:#efe5d2;border:1px solid rgba(176,141,91,.55);inset:5%;border-radius:3px}
+.hard h1{font:600 italic clamp(36px,10vw,52px)/1 "Cormorant Garamond",serif;color:#e4cc9c;letter-spacing:.01em;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.since{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;font:500 26px "Cormorant Garamond",serif;color:#d8c091}
+.inf{width:62px;height:30px}
+.inf path{fill:none;stroke:#d8c091;stroke-width:2.2;stroke-linecap:round}
+.inf .run{stroke:#f3dfb4;stroke-dasharray:22 140;animation:run 3.2s linear infinite}
+@keyframes run{to{stroke-dashoffset:-162}}
+.cphoto{width:70%;aspect-ratio:4/5;margin:0 auto 26px;border-radius:999px 999px 6px 6px;border:1px solid rgba(216,192,145,.75);padding:6px;background:rgba(0,0,0,.18)}
+.cphoto::before{content:"";display:block;width:100%;height:100%;border-radius:999px 999px 3px 3px;background:radial-gradient(circle at 45% 35%,rgba(216,192,145,.18),rgba(0,0,0,.15))}
+.cphoto.has::before{display:none}
+.cphoto img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;border-radius:999px 999px 3px 3px}
+.foil{width:54px;height:54px;margin:0 auto 26px;border:1px solid rgba(216,192,145,.7);border-radius:50%;display:grid;place-items:center;font:600 italic 24px "Cormorant Garamond",serif;color:#d8c091}
+
+/* photo */
+.photo{width:64%;aspect-ratio:1;margin:0 auto 20px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#efe3cb,#dccaa8);border:1px solid #d6c6a8;overflow:hidden;box-shadow:inset 0 2px 10px rgba(90,70,40,.15)}
+.photo.big{width:84%;aspect-ratio:4/5;border-radius:4px;margin-bottom:18px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* years */
+.year b{font:600 clamp(54px,15vw,76px)/.9 "Cormorant Garamond",serif;color:var(--gold)}
+.photo~b{font-size:clamp(44px,12vw,60px)!important}
+.photo{width:52%}
+.year p{font:500 italic clamp(17px,4.6vw,21px)/1.42 "Cormorant Garamond",serif;color:#4a4339;margin:0 auto;max-width:30ch}
+.ded{font:600 italic clamp(40px,11vw,52px)/1 "Cormorant Garamond",serif;color:var(--gold)}
+.first .photo.big~.ded{font-size:30px}
+.first p{font:500 italic 20px "Cormorant Garamond",serif;color:var(--soft);margin:0}
+
+/* blood letter */
+.letter .in{justify-content:center;text-align:left}
+#blood{font:600 clamp(20px,5.3vw,25px)/1.38 Caveat,cursive;color:var(--blood);white-space:pre-wrap;text-shadow:0 0 1px rgba(90,0,0,.45);transform:rotate(-.6deg)}
+#blood .gap{display:block;height:.55em}
+#blood .w{display:inline-block;white-space:nowrap}
+#blood .ch{display:inline-block;position:relative;white-space:pre;opacity:0}
+#blood .ch.on{opacity:1;transition:opacity .22s ease-out}
+.drip{position:absolute;left:45%;top:78%;width:2px;height:0;border-radius:0 0 3px 3px;background:linear-gradient(#7a0b0b,#5c0606)}
+.ch.on .drip{animation:drip 2.4s ease-in .2s forwards}
+.drip::after{content:"";position:absolute;bottom:-3px;left:-1.5px;width:5px;height:5px;border-radius:50%;background:#5c0606}
+@keyframes drip{to{height:var(--len)}}
+
+/* invite */
+.invite h2{font-size:clamp(28px,7.5vw,36px);line-height:1.15}
+.invite p{font:500 italic 20px/1.45 "Cormorant Garamond",serif;color:var(--soft);margin:0}
+.when{margin:22px 0 26px;font:600 clamp(22px,6vw,28px)/1.3 "Cormorant Garamond",serif;color:var(--gold)}
+.when small{display:block;font:500 15px Manrope,sans-serif;color:var(--ink);margin-top:6px}
+.go{align-self:center;min-height:50px;padding:0 36px;border:0;border-radius:999px;background:var(--cloth);color:#efe5d2;font:600 16px Manrope,sans-serif;cursor:pointer;animation:breathe 2.8s ease-in-out infinite}
+.go:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@keyframes breathe{50%{transform:scale(1.05);box-shadow:0 8px 22px rgba(31,51,40,.35)}}
+#yes{display:none;font:600 26px Caveat,cursive;color:var(--blood)}
+
+.hint{color:#b9b09f;font:500 italic 18px "Cormorant Garamond",serif;transition:opacity .8s;display:flex;align-items:center;gap:10px}
+.hint span{display:inline-block;animation:swipe 1.8s ease-in-out infinite}
+@keyframes swipe{0%,100%{transform:translateX(6px)}50%{transform:translateX(-6px)}}
+.hint.off{opacity:0}
+.snd{position:fixed;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(216,192,145,.45);background:rgba(0,0,0,.2);color:#d8c091;font-size:18px;cursor:pointer;z-index:5;display:grid;place-items:center}
+.snd.off{opacity:.45;text-decoration:line-through}
+.snd:focus-visible{outline:2px solid #d8c091;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.inf .run,.go,.hint span{animation:none}}
+</style>
+</head>
+<body>
+
+<div id="book">
+  <!-- 0 cover -->
+  <div class="page hard" data-density="hard"><div class="in">
+    <div class="cphoto" data-cover></div>
+    <h1>Love Story</h1>
+    <div class="since">2020 —
+      <svg class="inf" viewBox="0 0 62 30" aria-label="cheksiz"><path d="M31 15c-5-7-10-10-15-10a10 10 0 0 0 0 20c5 0 10-3 15-10s10-10 15-10a10 10 0 0 1 0 20c-5 0-10-3-15-10z"/><path class="run" d="M31 15c-5-7-10-10-15-10a10 10 0 0 0 0 20c5 0 10-3 15-10s10-10 15-10a10 10 0 0 1 0 20c-5 0-10-3-15-10z"/></svg>
+    </div>
+  </div></div>
+
+  <!-- 1 first page: big photo -->
+  <div class="page first"><div class="in">
+    <div class="ded">Zilolamga</div><div class="orn"></div><p>6 yil, cheksiz xotira!</p>
+  </div></div>
+</div>
+
+<button class="snd" id="snd" type="button" aria-label="Musiqa">♪</button>
+<div class="hint" id="hint"><span>←</span> Sahifani surib o'tkazing</div>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+{
+const MEET={day:'Yakshanba, 22-noyabr'};
+/* Rasmlar: har biriga rasm manzili yoki data: URI. Bo'sh qolsa, doira ko'rinmaydi. */
+const COVER='image.jpg'; // muqova rasmi (data: URI)
+const PHOTOS={2020:'',2021:'',2022:'',2023:'',2024:'',2025:'',2026:''};
+
+const years=[
+ ['2020','O\'sha yil... mening yangi, rangli hayotimning boshlanishi edi. Hammasi unchalik oson boshlanmadi, lekin qanchalik qiyin bo\'lsa ham senga erishdim, roziligingni oldim va bizning hikoyamiz boshlandi)'],
+ ['2021','Bir-birimizni yaqindan taniy boshladik. Sen bilan gaplashmagan kunlarim doim nimadir kamdek o\'tardi. Sovuqda sovqotgan qo\'llaring mening cho\'ntagimda ketgani kechagidek esimda ;)'],
+ ['2022','Oson yil bo\'lmadi... qarshiliklar, to\'xtalishlar... lekin biz taslim bo\'lmadik!'],
+ ['2023','Seni ko\'rish uchun, yonimda bo\'lishing uchun har bir misol-masalani o\'rgatganingda seni tinglardim. Menga faqat so\'zlaringni eshitish yoqimli edi)'],
+ ['2024','Men uchun eng qiyin, eng esda qolarli, juda ko\'p pand yegan, o\'rganish yilim... lekin sen hali ham yonimdasan, mening motivatsiyamsan.'],
+ ['2025','O\'zimni endi taniy boshladim. Senga bo\'lgan sevgimni ko\'rsatish uchun oz-moz imkoniyatlar paydo bo\'la boshladi. Sen hali ham men bilansan, ajoyib xotiralarimiz bor)'],
+ ['2026','Ha, har qanday gapim senga yoqimsizdek tuyula boshladi. Lekin bu yil men eng katta maqsadlarimdan biriga erishdim, SENGA! Endi seni hech qayerga qo\'yib yubormayman. Hamma aybni o\'zimdan topdim va hammasini to\'g\'rilaymiz.']
+];
+const letter=`Zilola,
+
+Ha, tan olaman, ko'p marta ayb menda bo'lgan. Sen ayblanishga loyiq bo'lmagan paytlarda ham sabr qilding. Buning uchun kechir meni.
+
+Bu bilan hammasi birdan tuzalib qoladi deb o'ylamayman. Faqat bilishingni istayman: men xatolarimni ko'rdim, o'zgarishga tayyorman.
+
+Seni sevaman.
+
+Jamshidbek`;
+
+const book=document.getElementById('book');
+const add=html=>book.insertAdjacentHTML('beforeend',html);
+years.forEach((y,i)=>add(`<div class="page year"><div class="in"><div class="slot" data-photo="${y[0]}"></div><b>${y[0]}</b><div class="orn"></div><p>${y[1]}</p></div><div class="num">${i+2}</div></div>`));
+add(`<div class="page letter"><div class="in"><div id="blood"></div></div></div>`);
+add(`<div class="page invite"><div class="in"><h2>Yuzma-yuz ko'rishib, barchasini oson o'z joyiga tushiraylik</h2><div class="orn"></div><div class="when">${MEET.day}</div><button class="go" id="ok" type="button">Kelaman</button><div id="yes">Kutaman ♥</div></div></div>`);
+add(`<div class="page hard" data-density="hard"><div class="in"><div class="foil">Z&amp;J</div></div></div>`);
+
+/* size */
+const wide=innerWidth>=820;
+let w=wide?Math.min(innerWidth*.9/2,innerHeight*.8/1.42,440):Math.min(innerWidth*.88,innerHeight*.78/1.42,420);
+w=Math.round(w);const h=Math.round(w*1.42);
+
+if(COVER){const c=document.querySelector('[data-cover]');c.classList.add('has');c.innerHTML=`<img src="${COVER}" alt="">`;}
+document.querySelectorAll('[data-photo]').forEach(el=>{const src=PHOTOS[el.dataset.photo];
+  if(src){el.className='photo';el.innerHTML=`<img src="${src}" alt="">`;}else el.remove();});
+/* shrink long year texts so each fits its page */
+document.querySelectorAll('.page.year').forEach(pg=>{
+  pg.style.cssText=`position:fixed;left:-9999px;top:0;width:${w}px;height:${h}px`;
+  const inn=pg.querySelector('.in'),p=pg.querySelector('p');inn.style.justifyContent='flex-start';
+  const cs=getComputedStyle(inn),avail=h-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-18;
+  const used=()=>[...inn.children].reduce((a,c)=>{const m=getComputedStyle(c);return a+c.offsetHeight+parseFloat(m.marginTop)+parseFloat(m.marginBottom)},0);
+  let fs=parseFloat(getComputedStyle(p).fontSize);
+  const ph=pg.querySelector('.photo');let pw=52;
+  while(used()>avail&&ph&&pw>34){pw-=2;ph.style.width=pw+'%';}
+  while(used()>avail&&fs>13){fs-=.5;p.style.fontSize=fs+'px';}
+  inn.style.justifyContent='';pg.style.cssText='';
+});
+const pf=new St.PageFlip(book,{width:w,height:h,size:'fixed',showCover:true,usePortrait:true,mobileScrollSupport:false,maxShadowOpacity:.55,flippingTime:950,drawShadow:true});
+pf.loadFromHTML(document.querySelectorAll('.page'));
+/* centre the closed book on wide screens */
+const shift=()=>{if(pf.getOrientation()!=='landscape'){book.style.transform='';return;}
+  const i=pf.getCurrentPageIndex(),n=pf.getPageCount();
+  book.style.transform=i===0?`translateX(${-w/2}px)`:i>=n-1?`translateX(${w/2}px)`:'translateX(0)';};
+book.style.transition='transform .7s ease';shift();
+
+/* paper sound, made in the browser */
+let ac=null;
+const rustle=()=>{try{
+  ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+  const len=ac.sampleRate*.45,buf=ac.createBuffer(1,len,ac.sampleRate),d=buf.getChannelData(0);
+  for(let i=0;i<len;i++){const t=i/len;d[i]=(Math.random()*2-1)*Math.pow(1-t,2.2)*(t<.08?t/.08:1);}
+  const src=ac.createBufferSource();src.buffer=buf;
+  const f=ac.createBiquadFilter();f.type='bandpass';f.frequency.value=2600;f.Q.value=.6;
+  const g=ac.createGain();g.gain.value=.12;
+  src.connect(f).connect(g).connect(ac.destination);src.start();
+}catch(e){}};
+
+/* easier swipe: a short, clear swipe still turns the page */
+let sx=null,si=0;
+book.addEventListener('pointerdown',e=>{sx=e.clientX;si=pf.getCurrentPageIndex();});
+addEventListener('pointerup',e=>{
+  if(sx===null)return;const dx=e.clientX-sx;sx=null;
+  if(Math.abs(dx)<50)return;
+  let tries=0;const t=setInterval(()=>{
+    if(pf.getCurrentPageIndex()!==si||++tries>25){clearInterval(t);return;}
+    if(pf.getState()==='read'){clearInterval(t);dx<0?pf.flipNext():pf.flipPrev();}
+  },60);
+});
+
+
+/* soft piano, played in the browser (starts on first touch) */
+let music=null,muted=false;
+const startMusic=()=>{
+  if(music||muted)return;
+  try{
+    const ctx=ac||(ac=new (window.AudioContext||window.webkitAudioContext)());
+    ctx.resume&&ctx.resume();
+    const master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);
+    master.gain.linearRampToValueAtTime(.55,ctx.currentTime+3);
+    const len=ctx.sampleRate*3.2,ir=ctx.createBuffer(2,len,ctx.sampleRate);
+    for(let c=0;c<2;c++){const d=ir.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);}
+    const rev=ctx.createConvolver();rev.buffer=ir;const wet=ctx.createGain();wet.gain.value=.45;
+    rev.connect(wet).connect(master);
+    const dry=ctx.createGain();dry.gain.value=.6;dry.connect(master);
+    const note=(f,t,v)=>{
+      const g=ctx.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.012);g.gain.exponentialRampToValueAtTime(.0008,t+3.2);
+      const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.setValueAtTime(2400,t);lp.frequency.exponentialRampToValueAtTime(700,t+2);
+      [[1,1],[2,.32],[3,.12],[4,.05]].forEach(([m,a])=>{const o=ctx.createOscillator();o.type='sine';o.frequency.value=f*m;
+        const og=ctx.createGain();og.gain.value=a;o.connect(og).connect(g);o.start(t);o.stop(t+3.3);});
+      g.connect(lp);lp.connect(dry);lp.connect(rev);
+    };
+    const hz=n=>440*Math.pow(2,(n-69)/12);
+    /* Am – F – C – G, slow arpeggios */
+    const prog=[[45,57,60,64,69],[41,53,57,60,65],[48,55,60,64,67],[43,55,59,62,67]];
+    const pat=[0,2,3,4,3,2,1,2];
+    const beat=.5;let next=ctx.currentTime+.2,bar=0;
+    const sched=()=>{
+      if(muted){return;}
+      while(next<ctx.currentTime+1.2){
+        const ch=prog[bar%4];
+        pat.forEach((k,i)=>{const t=next+i*beat;note(hz(ch[k]),t,k===0?.22:.12+Math.random()*.04);
+          if(i===0)note(hz(ch[0]-12),t,.12);});
+        if(bar%2===1)note(hz(ch[4]+12),next+beat*5,.07);
+        next+=beat*pat.length;bar++;
+      }
+    };
+    sched();music={timer:setInterval(sched,300),master,ctx};
+  }catch(e){}
+};
+const sndBtn=document.getElementById('snd');
+sndBtn.addEventListener('click',e=>{
+  e.stopPropagation();
+  if(music&&!muted){muted=true;clearInterval(music.timer);music.master.gain.setTargetAtTime(0,music.ctx.currentTime,.4);music=null;sndBtn.classList.add('off');}
+  else{muted=false;sndBtn.classList.remove('off');startMusic();}
+});
+['pointerdown','touchstart','keydown'].forEach(ev=>addEventListener(ev,e=>{if(e.target!==sndBtn)startMusic();},{passive:true}));
+/* phone rotated: rebuild at the new size */
+addEventListener('orientationchange',()=>setTimeout(()=>location.reload(),300));
+/* blood handwriting */
+const out=document.getElementById('blood');let written=false;
+const write=()=>{
+  if(written)return;written=true;
+  const box=out.parentElement,cs=getComputedStyle(box);
+  const avail=box.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-10;
+  /* lay out every letter first (invisible), so nothing moves while writing */
+  const chars=[];let word=null;
+  for(let i=0;i<letter.length;i++){
+    const c=letter[i];
+    if(c==='\n'){word=null;
+      if(letter[i+1]==='\n'){const g=document.createElement('span');g.className='gap';out.appendChild(g);i++;chars.push(null);}
+      else{out.appendChild(document.createTextNode('\n'));chars.push(null);}
+      continue;}
+    if(c===' '){word=null;out.appendChild(document.createTextNode(' '));chars.push(' ');continue;}
+    if(!word){word=document.createElement('span');word.className='w';out.appendChild(word);}
+    const sp=document.createElement('span');sp.className='ch';sp.textContent=c;
+    sp.style.color=`hsl(${358+Math.random()*4} ${72+Math.random()*12}% ${20+Math.random()*9}%)`;
+    const next=letter[i+1];
+    if((next===' '||next==='\n'||next===undefined)&&Math.random()<.14){
+      const d=document.createElement('i');d.className='drip';d.style.setProperty('--len',(8+Math.random()*16)+'px');sp.appendChild(d);}
+    word.appendChild(sp);chars.push(sp);
+  }
+  let fs=parseFloat(getComputedStyle(out).fontSize);
+  if(avail>100)while(out.offsetHeight>avail&&fs>14){fs-=.5;out.style.fontSize=fs+'px';}
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){chars.forEach(c=>c&&c!==' '&&c.classList.add('on'));return;}
+  let k=0;
+  const step=()=>{
+    const c=chars[k];
+    if(c&&c!==' ')c.classList.add('on');
+    k++;
+    if(k<chars.length){
+      const t=c&&c!==' '?c.textContent:'';
+      setTimeout(step,c===null?450:c===' '?90:/[.,:!]/.test(t)?280:55+Math.random()*50);
+    }
+  };
+  setTimeout(step,700);
+};
+
+const hint=document.getElementById('hint');
+
+pf.on('flip',e=>{
+  hint.classList.add('off');shift();
+  const idx=e.data;
+  if(idx===9||idx===10)write();
+});
+
+document.getElementById('ok').addEventListener('click',e=>{e.stopPropagation();e.target.style.display='none';document.getElementById('yes').style.display='block';});
+}
+</script>
+</body>
+</html>
